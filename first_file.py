@@ -4,3 +4,5 @@ print('Hello dog2!')
 print('Hello dog3!')
 print('Hello dog4!')
 print('Hello dog5!')
+#работает
+#1 разработчик закончил
