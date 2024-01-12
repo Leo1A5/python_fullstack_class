@@ -4,9 +4,9 @@ order2 = {"id": 2, "items": []}
 def check_order(order):
     return bool(order.get("items"))
 def package_order(order):
-    return order
+    return bool(order)
 def send_order(check, package, order):
-    if check(order) == True:
+    if check(order) == True and package(order) == True:
         return f"Отправка: Упакован заказ {order['id']}"
     else:
         return f"Отправка: Заказ {order['id']} пуст"
