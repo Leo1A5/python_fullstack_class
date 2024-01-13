@@ -11,10 +11,8 @@ def package_order(check, order):
     else:
         return f"Заказ {order['id']}: пуст"
 def send_order(check, package, order):
-    if check:
-        return f"Отправка: {package}"
-    else: 
-        return f"Отправка: {package}"   
+    return f"Отправка: {package}"
+
 
 print(send_order(check_order(order1), package_order(check, order1), order1))
 print(send_order(check_order(order2), package_order(check, order2), order2))
