@@ -6,9 +6,9 @@ def package_order(order):
     return f"Упакован заказ {order['id']}"
 def send_order(check, package, order):
     if check(order):
-        return f"Отправка: {order['id']}" # в этом случае работает
+        return f"Отправка: {package(order)}" 
     else:
-        return f"Отправка: {package} пуст" # в этом нет
+        return f"Отправка: {package(order)} пуст" 
 
 print(send_order(check_order, package_order, order1))
-print(send_order(check_order, package_order, order2))
+print(send_order(check_order, package_order, order2)) 
