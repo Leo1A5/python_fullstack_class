@@ -2,22 +2,23 @@ base = {"arg": None ,
         "new_arg": None}
 
 
-def second_outer(param):
-    def outer(*args):
+def check_cash(func):
+    def wrap(*args):
         if base["arg"] == args:
-            return f"Загрузили из кеша: {base['new_arg']}"
+            print(f"Загрузили из кеша: {base['new_arg']}")
         else:
-            new_arg = param(*args)
+            new_arg = func(*args)
             base["arg"] = args
             base["new_arg"] = new_arg
-            return f"Посчитали цену: {new_arg}"
-    return outer
+            print(f"Посчитали цену: {new_arg}")
+        func(*args)
+    return wrap
 
         
-@second_outer
+@check_cash
 def calculate_project_cost(*args):
     return 3000
 
 
-print(calculate_project_cost('Логотип','Малый бизнес'))
-print(calculate_project_cost('Логотип','Малый бизнес'))
+calculate_project_cost('Логотип','Малый бизнес')
+calculate_project_cost('Логотип','Малый бизнес')

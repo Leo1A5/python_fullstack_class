@@ -6,7 +6,7 @@ def second_outer(param):
         return inner
     return outer
 
-@second_outer("dada")
+@second_outer
 def div(a,b):
     return a/b
 

@@ -1,13 +1,15 @@
-def new_func(func):
-    def outer(item, first_price, second_price):
-        return f"Цена на {item} изменилась {first_price} > {second_price} "
-    return outer
+def check_price(func):
+    def wrap(*args):
+        item, first_price, second_price = args 
+        print(f"Цена на {item} изменилась {first_price} > {second_price} ")
+        func(*args)
+    return wrap
 
 
-@new_func
+@check_price
 def change_price(item, first_price, second_price):
-    return new_price
+    pass
 
 
-print(change_price("Кресло", 5000, 4500))
-print(change_price("Стол", 8000, 7600))
+change_price("Кресло", 5000, 4500)
+change_price("Стол", 8000, 7600)
