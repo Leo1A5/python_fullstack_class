@@ -1,7 +1,6 @@
-def generator_expressions(n):
-    for n in range("Стр 1", "Стр 2"):
-        n = generator_expressions
-        return n
+def report_gen(*pages):
+    return (f"Page {i + 1}: {page}" for i, page in enumerate(pages))
 
+report_pages = report_gen("Стр 1", "Стр 2")
 
-print(generator_expressions)
+print(report_pages)

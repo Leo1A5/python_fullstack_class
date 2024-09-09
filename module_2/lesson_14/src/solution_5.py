@@ -10,7 +10,6 @@ input_data = [
     [('Ручка', 'Канцелярия'), ('Тетрадь', 'Канцелярия'), ('Кружка', 'Посуда'), ('Стул', 'Мебель')]
 ]
 
-output_data = list(map(lambda x: count_items(x), input_data))
 
 for data in output_data:
     print(data)
